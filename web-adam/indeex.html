@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year 2026 | Adams Benjamin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f2f4f7;
+            --soft-blue: #a8dadc;
+            --dark-blue: #457b9d;
+            --grey-text: #666;
+            --card-white: rgba(255, 255, 255, 0.95);
+            --note-blue: #cbd5e1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Background Animation (Love & Stars) */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating {
+            position: absolute;
+            color: var(--soft-blue);
+            opacity: 0.4;
+            animation: float 12s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* Card Style */
+        .glass-card {
+            background: var(--card-white);
+            border-radius: 35px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        h1 {
+            color: var(--dark-blue);
+            font-size: 3rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .author-top {
+            text-align: center;
+            color: var(--grey-text);
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .message-box {
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .signature-bottom {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #333;
+            margin-top: 25px;
+        }
+
+        /* Spotify Section */
+        .spotify-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        /* Controls & Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+            color: var(--dark-blue);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--dark-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Memory Board */
+        #board {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            padding-bottom: 50px;
+        }
+
+        .sticky-note {
+            width: 210px;
+            height: 210px;
+            background: var(--note-blue);
+            padding: 15px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 1.6rem;
+            position: relative;
+        }
+
+        .sticky-note textarea {
+            background: transparent;
+            border: none;
+            width: 100%;
+            height: 100%;
+            resize: none;
+            outline: none;
+            font-family: inherit;
+            color: #444;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 12px 12px 40px 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+            width: 210px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        input[type="file"] { display: none; }
+
+        .board-title {
+            text-align: center;
+            color: var(--grey-text);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation" id="bgAnim"></div>
+
+    <div class="container">
+        <div class="glass-card">
+            <h1>Happy New Year 2026</h1>
+            <div class="author-top">Adams Benjamin</div>
+        </div>
+
+        <div class="spotify-container">
+            <iframe style="border-radius:20px" src="https://open.spotify.com/embed/track/739Y696KFNI97S9Y77YpYV?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="glass-card">
+            <div class="message-box">
+                Happy New Year, everyone! Nggak kerasa kita udah di penghujung tahun lagi. Honestly, I’m just so grateful to have you guys in my life. Makasih udah jadi orang-orang yang paling asik buat diajak berbagi cerita and for making my 2025 so much more colorful.
+                <br><br>
+                I hope 2026 treats you well. May your coffee be strong and your stress levels be low. Semoga semua rencana yang sempat tertunda bisa kita execute bareng-bareng tahun ini. Stay healthy, stay humble, and keep being the amazing souls you are. Let’s kick off 2026 with a bang!
+            </div>
+            <div class="signature-bottom">Adams Benjamin.</div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn" onclick="addNote()"><i class="fas fa-sticky-note"></i> Btn Add Note</button>
+            <label class="btn" for="upload"><i class="fas fa-image"></i> Btn Photos</label>
+            <input type="file" id="upload" accept="image/*" onchange="addPhoto(event)">
+        </div>
+
+        <h3 class="board-title">#MEMORY BOARD</h3>
+        <div id="board"></div>
+    </div>
+
+    <script>
+        // Background Stars & Hearts
+        const bg = document.getElementById('bgAnim');
+        const icons = ['fa-heart', 'fa-star'];
+        
+        for (let i = 0; i < 25; i++) {
+            const icon = document.createElement('i');
+            icon.className = `fas ${icons[Math.floor(Math.random() * icons.length)]} floating`;
+            icon.style.left = Math.random() * 100 + 'vw';
+            icon.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            icon.style.animationDuration = (Math.random() * 7 + 5) + 's';
+            icon.style.animationDelay = (Math.random() * 5) + 's';
+            bg.appendChild(icon);
+        }
+
+        // Functions for Board
+        function addNote() {
+            const board = document.getElementById('board');
+            const note = document.createElement('div');
+            note.className = 'sticky-note';
+            const rot = Math.floor(Math.random() * 8) - 4;
+            note.style.transform = `rotate(${rot}deg)`;
+            note.innerHTML = `<textarea placeholder="Write a wish..."></textarea>`;
+            board.appendChild(note);
+        }
+
+        function addPhoto(event) {
+            const board = document.getElementById('board');
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const div = document.createElement('div');
+                div.className = 'polaroid';
+                const rot = Math.floor(Math.random() * 12) - 6;
+                div.style.transform = `rotate(${rot}deg)`;
+                div.innerHTML = `<img src="${e.target.result}"><p style="font-family:'Dancing Script'; margin:12px 0 0 0; color:#888;">2025 ❤️</p>`;
+                board.appendChild(div);
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
